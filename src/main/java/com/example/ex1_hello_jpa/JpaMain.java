@@ -19,10 +19,10 @@ public class JpaMain implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
         //1. insert member
-        Member member = new Member();
+        //Member member = new Member();
         //member.setId(2L);
         //member.setName("HelloA");
-        member.setUsername("hi2");
+        //member.setUsername("hi2");
 
         //2. find member
         //Member member = em.find(Member.class, 1L);
@@ -32,7 +32,7 @@ public class JpaMain implements CommandLineRunner {
         //member.setName("HelloJPA");
 
         // 영속 상태로 만들기
-        em.persist(member);
+        //em.persist(member);
         
         //4. jpql
         //List<Member> result = em.createQuery("select m from Member as m", Member.class)
