@@ -8,11 +8,12 @@ import java.util.Date;
 
 @Entity
 @Getter @Setter
+//@Table(name = "Member")
 //@Table(uniqueConstraints = ) unique 제약조건 걸때 씀
 public class Member {
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "name", nullable = false, columnDefinition = "varchar(100) default ‘EMPTY'")
+    @Column(name = "name", nullable = false, columnDefinition = "varchar(100) default 'EMPTY'")
     //, unique = true -> 이거는 안 씀, 왜냐? 제약조건 이름이 랜덤으로 되서 에러 발생 시 파악 불가능
     private String username;
     private Integer age;
