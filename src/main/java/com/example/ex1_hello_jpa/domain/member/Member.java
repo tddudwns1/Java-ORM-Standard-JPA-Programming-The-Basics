@@ -27,11 +27,15 @@ public class Member {
     //@Lob
     //private String description;
 
-    @Column(name = "TEAM_ID")
-    private Long teamId;
+    //@Transient
+    //private int temp;
 
-    @Transient
-    private int temp;
+    //@Column(name = "TEAM_ID")
+    //private Long teamId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
 
     public Member() {
 
