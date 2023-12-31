@@ -1,13 +1,16 @@
 package com.example.ex1_hello_jpa.domain.member;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Entity
-@Getter @Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 //@Table(name = "Member")
 //@Table(uniqueConstraints = ) unique 제약조건 걸때 씀
 public class Member {
@@ -37,7 +40,8 @@ public class Member {
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
-    public Member() {
-
+    public void changeTeam(Team team){
+        this.team = team;
+        team.getMembers().add(this);
     }
 }
