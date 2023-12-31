@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.concurrent.locks.Lock;
 
 @Entity
 @Getter
@@ -20,6 +21,20 @@ public class Member {
     @Column(name = "name", nullable = false, columnDefinition = "varchar(100) default 'EMPTY'")
     //, unique = true -> 이거는 안 씀, 왜냐? 제약조건 이름이 랜덤으로 되서 에러 발생 시 파악 불가능
     private String username;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+
+    public void changeTeam(Team team){
+        this.team = team;
+        team.getMembers().add(this);
+    }
+
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
+
     //private Integer age;
     //@Enumerated(EnumType.STRING)
     //private RoleType roleType;
@@ -35,13 +50,4 @@ public class Member {
 
     //@Column(name = "TEAM_ID")
     //private Long teamId;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TEAM_ID")
-    private Team team;
-
-    public void changeTeam(Team team){
-        this.team = team;
-        team.getMembers().add(this);
-    }
 }
