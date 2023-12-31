@@ -38,19 +38,33 @@ public class Member extends BaseEntity{
     @OneToMany(mappedBy = "member")
     private List<MemberProduct> memberProducts = new ArrayList<>();
 
+    @Embedded
+    private Period workPeriod;
+
+    @Embedded
+    private Address homeAddress;
+
+    //@Embedded
+    //@AttributeOverrides() // 겹치는 임베디드 타입을 사용할 때 구분하기 위해서 사용
+    //private Address workAddress;
+
     //private Integer age;
+    //
     //@Enumerated(EnumType.STRING)
     //private RoleType roleType;
+    //
     //@Temporal(TemporalType.TIMESTAMP)
     //private Date createdDate;
+    //
     //@Temporal(TemporalType.TIMESTAMP)
     //private Date lastModifiedDate;
+    //
     //@Lob
     //private String description;
-
+    //
     //@Transient
     //private int temp;
-
+    //
     //@Column(name = "TEAM_ID")
     //private Long teamId;
 }
