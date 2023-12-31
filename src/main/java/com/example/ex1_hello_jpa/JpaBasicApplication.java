@@ -1,6 +1,5 @@
 package com.example.ex1_hello_jpa;
 
-import com.example.ex1_hello_jpa.domain.member.Member;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

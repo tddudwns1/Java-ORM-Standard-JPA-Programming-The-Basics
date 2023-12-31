@@ -1,4 +1,4 @@
-package com.example.ex1_hello_jpa.domain.member;
+package com.example.ex1_hello_jpa.domain;
 
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.example.ex1_hello_jpa.domain.member;
+package com.example.ex1_hello_jpa.domain;
 
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
@@ -10,6 +10,7 @@ import lombok.Setter;
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Album extends Item{
-    private String artist;
+public class Book extends Item{
+    private String author;
+    private String isbn;
 }

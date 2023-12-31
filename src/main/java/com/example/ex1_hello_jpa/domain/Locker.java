@@ -1,4 +1,4 @@
-package com.example.ex1_hello_jpa.domain.member;
+package com.example.ex1_hello_jpa.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,13 +10,14 @@ import lombok.Setter;
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn
-public abstract class Item {
+public class Locker {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "LOCKER_ID")
     private Long id;
 
     private String name;
-    private int price;
+
+    @OneToOne(mappedBy = "locker", fetch = FetchType.LAZY)
+    private Member member;
 }

@@ -1,8 +1,6 @@
 package com.example.ex1_hello_jpa;
 
-import com.example.ex1_hello_jpa.domain.member.Member;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
