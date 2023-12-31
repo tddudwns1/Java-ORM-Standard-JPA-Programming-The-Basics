@@ -16,7 +16,7 @@ import java.util.concurrent.locks.Lock;
 @NoArgsConstructor
 //@Table(name = "Member")
 //@Table(uniqueConstraints = ) unique 제약조건 걸때 씀
-public class Member {
+public class Member extends BaseEntity{
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MEMBER_ID")
     private Long id;
